@@ -7,5 +7,6 @@ RUN mkdir -p /var/www
 RUN composer create-project symfony/framework-standard-edition /var/www/
 RUN chmod +x /var/www/bin/console
 EXPOSE 8080
-CMD /var/www/bin/console server:run 0.0.0.0:8080
+COPY start.sh /
+CMD /bin/sh /start.sh
 VOLUME /var/www/
