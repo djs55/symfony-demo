@@ -7,6 +7,8 @@ RUN mkdir -p /var/www
 RUN composer create-project symfony/framework-standard-edition /var/www/
 RUN chmod +x /var/www/bin/console
 EXPOSE 8080
+# for inotify testing
+RUN mkdir -p /var/www/inotify
 COPY start.sh /
 CMD /bin/sh /start.sh
 VOLUME /var/www/
